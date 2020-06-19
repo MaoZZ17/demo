@@ -32,7 +32,17 @@ module.exports = app => {
     if (req.Model.modelName === "Category") {
       queryOptions.populate = 'parent'
     }
-    const items = await req.Model.find().setOptions(queryOptions).limit(10)
+    
+    const items = await req.Model.find().setOptions(queryOptions).limit(100)
+      // if (req.Model.modelName === "Article") {
+      //   console.log(111)
+      //   Object.keys(items).map(key =>{
+      //     items[key].categories.map(v =>{
+      //       v.populate()
+      //       console.log(v)
+      //     })
+      //   })
+      // }
     res.send(items)
   })
   //获取详情
@@ -40,6 +50,7 @@ module.exports = app => {
     const model = await req.Model.findById(req.params.id)
     res.send(model)
   })
+  
   app.use('/admin/api/rest/:resource',
     authMiddleware(),
     resourceMiddleware(),

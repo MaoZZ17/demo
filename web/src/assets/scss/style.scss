@@ -40,6 +40,15 @@ a {
   }
 }
 
+//text overflow
+.text-ellipse{
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 //宽高
 .w-100 {
   width: 100%;
