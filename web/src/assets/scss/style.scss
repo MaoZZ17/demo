@@ -17,6 +17,9 @@ body {
 a {
   color: #999;
 }
+p {
+  line-height: 1.5rem;
+}
 
 @each $colorKey, $color in $colors {
   .text-#{$colorKey} {
@@ -41,13 +44,12 @@ a {
 }
 
 //text overflow
-.text-ellipse{
+.text-ellipse {
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 
 //宽高
 .w-100 {
@@ -136,7 +138,7 @@ a {
       border-bottom: 3px solid map-get($map: $colors, $key: primary);
     }
   }
-  &.nav-inverse{
+  &.nav-inverse {
     justify-content: space-around;
     .nav-item {
       border-bottom: 3px solid transparent;
@@ -163,5 +165,12 @@ a {
     width: 0.7692rem;
     height: 0.7692rem;
     background-position: 38.577% 52.076%;
+  }
+}
+
+//borders
+@each $dir in (top, right, bottom, left) {
+  .border-#{$dir} {
+    border-#{$dir}: 1px solid $border-color;
   }
 }

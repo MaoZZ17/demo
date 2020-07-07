@@ -15,6 +15,12 @@ Vue.use(VueRouter)
         path:'/',
         name:'Home',
         component: () => import(/* webpackChunkName: "Main" */ '../views/Home.vue'),
+      },
+      {
+        path:'/articles/:id',
+        name:'Article',
+        component: () => import(/* webpackChunkName: "Article" */ '../views/Article.vue'),
+        props: true
       }
     ]
   }
