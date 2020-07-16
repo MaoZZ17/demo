@@ -71,7 +71,9 @@
           class="d-flex flex-wrap"
           style="margin: 0 -0.5rem"
         >
-          <div
+          <router-link
+            tag="div"
+            :to="`/heroes/${item._id}`"
             class="p-2 text-center"
             style="width:20%"
             v-for="(item,i) in category.heroList"
@@ -82,7 +84,7 @@
               class='w-100'
             />
             <div>{{item.name}}</div>
-          </div>
+          </router-link>
         </div>
       </template>
     </my-list-card>

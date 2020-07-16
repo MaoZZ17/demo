@@ -23,6 +23,11 @@ Vue.use(VueRouter)
         props: true
       }
     ]
+  },{
+    path:'/heroes/:id',
+        name:'Hero',
+        component: () => import(/* webpackChunkName: "Hero" */ '../views/Hero.vue'),
+        props: true
   }
 ]
 
